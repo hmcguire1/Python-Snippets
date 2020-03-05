@@ -53,8 +53,7 @@ def accounts_by_ou(ou_id: str, next_token: str = '', **kwargs) -> JSONDict:
     if accounts.get('NextToken'):
         accounts_by_ou(ou_id=ou_id, client=client, temp_list=temp_list,
                        next_token=accounts.get('NextToken'))
-    else:
-        return json.dumps(temp_list)
+    return json.dumps(temp_list)
 
 if __name__ == "__main__":
     _main()
