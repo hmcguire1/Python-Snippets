@@ -21,9 +21,9 @@ def _main():
         help="Id of AWS Org OU. Takes a string"
     )
     #Gather k,v in PARSER
-    ARGS = vars(PARSER.parse_args())
+    args = vars(PARSER.parse_args())
 
-    print(accounts_by_ou(ou_id=ARGS['ou']))
+    print(accounts_by_ou(ou_id=args['ou']))
 
 def accounts_by_ou(ou_id: str, next_token: str = '', **kwargs) -> JSONDict:
     '''
